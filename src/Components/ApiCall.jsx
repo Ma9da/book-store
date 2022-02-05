@@ -22,12 +22,13 @@ function ApiCall() {
                             {/* new */}
                             <div class="card medium hoverable">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src={book.volumeInfo.imageLinks.thumbnail !== undefined ? book.volumeInfo.imageLinks.thumbnail : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.g81E8RkDlLV955j1yb15MQHaHa%26pid%3DApi&f=1'} alt="book"/>
+                                    <img class="activator" src={book.volumeInfo.imageLinks.thumbnail !== undefined ? book.volumeInfo.imageLinks.thumbnail : 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.g81E8RkDlLV955j1yb15MQHaHa%26pid%3DApi&f=1'} alt="book" />
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">{book.volumeInfo?.title?.length > 15 ? book.volumeInfo.title.substring(0, 15) + "..." : book.volumeInfo.title}<i class="material-icons right">more_vert</i></span>
-                                    <span>{book.saleInfo?.listPrice?.amount ? book.saleInfo?.listPrice?.amount :  (Math.floor(Math.random() * 350))}</span> 
-                                    <span>{book?.saleInfo?.listPrice?.currencyCode ? book.saleInfo?.listPrice?.currencyCode : " EGP"}</span>
+                                    <span className='new badge grey' data-badge-caption={book?.saleInfo?.listPrice?.currencyCode ? book.saleInfo?.listPrice?.currencyCode : " EGP" }>
+                                        <span>{book.saleInfo?.listPrice?.amount ? book.saleInfo?.listPrice?.amount : (Math.floor(Math.random() * 350 + 4))}</span>
+                                    </span>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
